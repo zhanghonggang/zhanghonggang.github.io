@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>张鸿钢的个人博客</title>
+  
+  <subtitle>Zhang Honggang&#39;s Personal Website</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://zhanghonggang.com/"/>
+  <updated>2019-10-19T11:51:06.315Z</updated>
+  <id>http://zhanghonggang.com/</id>
+  
+  <author>
+    <name>Neo</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>十年</title>
+    <link href="http://zhanghonggang.com/uncategorized/%E5%8D%81%E5%B9%B4/"/>
+    <id>http://zhanghonggang.com/uncategorized/十年/</id>
+    <published>2019-10-19T11:51:06.000Z</published>
+    <updated>2019-10-19T11:51:06.315Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Vue2-0入门-全局API</title>
+    <link href="http://zhanghonggang.com/uncategorized/Vue2-0%E5%85%A5%E9%97%A8-%E5%85%A8%E5%B1%80API/"/>
+    <id>http://zhanghonggang.com/uncategorized/Vue2-0入门-全局API/</id>
+    <published>2019-07-23T05:33:22.000Z</published>
+    <updated>2019-07-23T05:54:02.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+
+&lt;h3 id=&quot;第一节：Vue-directive-自定义指令&quot;&gt;&lt;a href=&quot;#第一节：Vue-directive-自定义指令&quot; class=&quot;headerlink&quot; title=&quot;第一节：Vue.directive
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Vue" scheme="http://zhanghonggang.com/tags/Vue/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>C语言入门</title>
+    <link href="http://zhanghonggang.com/uncategorized/C%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/"/>
+    <id>http://zhanghonggang.com/uncategorized/C语言入门/</id>
+    <published>2019-07-22T02:20:32.000Z</published>
+    <updated>2019-08-12T06:49:50.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;C语言是古老而长青的编程语言，它具备了现代程序设计的基础要求，它的语法是很多其他编程语言的基础，在系统程序、嵌入式系统等领域依然是无可替代的编程语言，在各类编程语言排行榜上常年占据前两名的位置。 本课程是后续的操作系统、编译原理、体系结构等课程的基石。&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+      <category term="C语言" scheme="http://zhanghonggang.com/tags/C%E8%AF%AD%E8%A8%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo简单使用</title>
+    <link href="http://zhanghonggang.com/hexo/hexo%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/"/>
+    <id>http://zhanghonggang.com/hexo/hexo简单使用/</id>
+    <published>2019-07-11T05:03:13.000Z</published>
+    <updated>2019-07-11T11:56:16.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;常用指令|Hexo
+    
+    </summary>
+    
+      <category term="hexo" scheme="http://zhanghonggang.com/categories/hexo/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Vue2.0入门-内部指令</title>
+    <link href="http://zhanghonggang.com/uncategorized/Vue2-0%E5%85%A5%E9%97%A8-%E5%86%85%E9%83%A8%E6%8C%87%E4%BB%A4/"/>
+    <id>http://zhanghonggang.com/uncategorized/Vue2-0入门-内部指令/</id>
+    <published>2019-07-10T14:08:27.000Z</published>
+    <updated>2019-07-11T03:47:28.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;渐进式JavaScript框架Vue入门学习第一节——内部指令
+    
+    </summary>
+    
+    
+      <category term="Vue" scheme="http://zhanghonggang.com/tags/Vue/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>不悔梦归处，只恨太匆匆</title>
+    <link href="http://zhanghonggang.com/uncategorized/%E4%B8%8D%E6%82%94%E6%A2%A6%E5%BD%92%E5%A4%84%EF%BC%8C%E5%8F%AA%E6%81%A8%E5%A4%AA%E5%8C%86%E5%8C%86/"/>
+    <id>http://zhanghonggang.com/uncategorized/不悔梦归处，只恨太匆匆/</id>
+    <published>2019-06-30T09:52:56.000Z</published>
+    <updated>2019-06-30T09:52:58.000Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>故梦</title>
+    <link href="http://zhanghonggang.com/uncategorized/%E6%95%85%E6%A2%A6/"/>
+    <id>http://zhanghonggang.com/uncategorized/故梦/</id>
+    <published>2019-06-14T07:31:47.000Z</published>
+    <updated>2019-06-30T09:51:40.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;生命中曾经有过的所有灿烂，原来终究，都需要用寂寞来偿还。&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+      <category term="回忆" scheme="http://zhanghonggang.com/tags/%E5%9B%9E%E5%BF%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SSR使用教程</title>
+    <link href="http://zhanghonggang.com/uncategorized/SSR%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/"/>
+    <id>http://zhanghonggang.com/uncategorized/SSR使用教程/</id>
+    <published>2019-05-22T07:37:28.000Z</published>
+    <updated>2019-05-22T09:25:34.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;我们每一个人，自从出生的那一刻起，便是自由的。不管阻挡我们的人有多么强大，都没有关系。火焰之水也好，冰之大地也好，无论什么都好，能够亲眼看见那些东西的人，才是这个世界上获得最大自由的人。
+    
+    </summary>
+    
+    
+      <category term="Wall.Maria" scheme="http://zhanghonggang.com/tags/Wall-Maria/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SS/SSR简介</title>
+    <link href="http://zhanghonggang.com/uncategorized/SS-SSR%E7%AE%80%E4%BB%8B/"/>
+    <id>http://zhanghonggang.com/uncategorized/SS-SSR简介/</id>
+    <published>2019-05-22T05:57:35.000Z</published>
+    <updated>2019-05-24T00:43:33.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;SS 的全称是 Shadowsocks，是一种加密的传输方式（一种基于 Socks5 代理方式的网络数据加密传输包）；SS 是目前主流的科学上网方式，是目前最稳定最好用的科学上网工具之一。&lt;br&gt;SSR（全称 ShadowsocksR ）是 SS 的修改版，也算是增强版，是在SS 的基础上做了些功能的增加和修改。
+    
+    </summary>
+    
+    
+      <category term="Wall.Maria" scheme="http://zhanghonggang.com/tags/Wall-Maria/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Typora入门</title>
+    <link href="http://zhanghonggang.com/hexo/Typora%E5%85%A5%E9%97%A8/"/>
+    <id>http://zhanghonggang.com/hexo/Typora入门/</id>
+    <published>2019-05-18T06:00:43.000Z</published>
+    <updated>2019-05-19T12:38:54.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;写Markdown费事？Typora让你像写word一样行云流水，所见即所得。
+    
+    </summary>
+    
+      <category term="hexo" scheme="http://zhanghonggang.com/categories/hexo/"/>
+    
+    
+      <category term="markdown编辑器" scheme="http://zhanghonggang.com/tags/markdown%E7%BC%96%E8%BE%91%E5%99%A8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>昨天的你的现在的未来</title>
+    <link href="http://zhanghonggang.com/%E9%9A%8F%E7%AC%94/%E6%98%A8%E5%A4%A9%E7%9A%84%E4%BD%A0%E7%9A%84%E7%8E%B0%E5%9C%A8%E7%9A%84%E6%9C%AA%E6%9D%A5/"/>
+    <id>http://zhanghonggang.com/随笔/昨天的你的现在的未来/</id>
+    <published>2019-05-07T06:33:52.000Z</published>
+    <updated>2019-05-19T12:39:30.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;如今，我们形色匆忙，哪里还去铭记，曾经那细致而微的痛苦；那些特别想做却被阻拦过的梦；特别想在一起却终究无力同行的人；那些我们曾经明白了生离死别意义的艰难岁月；让我们一夜成长的悲伤过去；明亮的或者黑暗的，仿佛也早已随风而去了。多少深情，不过是付给将来说书人一句，哦，你说那个人那个事啊，偏偏我们故作镇定，轻描淡写，也或许，我们内心都知道，只是没有人跟我们说，朋友，不要沉溺在离开的人，过去的事的回忆里，因为他们曾经来过，但，也请不要忘记他们。                                                                   ——《艾迪芬奇的记忆》                                                   &lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="随笔" scheme="http://zhanghonggang.com/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+      <category term="回忆" scheme="http://zhanghonggang.com/tags/%E5%9B%9E%E5%BF%86/"/>
+    
+  </entry>
+  
+</feed>

@@ -1,0 +1,1906 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-matrix.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-matrix.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-matrix.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="C语言,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="张鸿钢的个人博客" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="C语言是古老而长青的编程语言，它具备了现代程序设计的基础要求，它的语法是很多其他编程语言的基础，在系统程序、嵌入式系统等领域依然是无可替代的编程语言，在各类编程语言排行榜上常年占据前两名的位置。 本课程是后续的操作系统、编译原理、体系结构等课程的基石。">
+<meta name="keywords" content="C语言">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C语言入门">
+<meta property="og:url" content="http://zhanghonggang.com/uncategorized/C语言入门/index.html">
+<meta property="og:site_name" content="张鸿钢的个人博客">
+<meta property="og:description" content="C语言是古老而长青的编程语言，它具备了现代程序设计的基础要求，它的语法是很多其他编程语言的基础，在系统程序、嵌入式系统等领域依然是无可替代的编程语言，在各类编程语言排行榜上常年占据前两名的位置。 本课程是后续的操作系统、编译原理、体系结构等课程的基石。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://i.loli.net/2019/07/22/5d35527f6230e99458.png">
+<meta property="og:image" content="https://i.loli.net/2019/08/12/LluvtCeOzQ6wEKF.png">
+<meta property="og:image" content="https://i.loli.net/2019/08/12/LzeoBatnKxqUwjH.png">
+<meta property="og:updated_time" content="2019-08-12T06:49:50.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="C语言入门">
+<meta name="twitter:description" content="C语言是古老而长青的编程语言，它具备了现代程序设计的基础要求，它的语法是很多其他编程语言的基础，在系统程序、嵌入式系统等领域依然是无可替代的编程语言，在各类编程语言排行榜上常年占据前两名的位置。 本课程是后续的操作系统、编译原理、体系结构等课程的基石。">
+<meta name="twitter:image" content="https://i.loli.net/2019/07/22/5d35527f6230e99458.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":true},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://zhanghonggang.com/uncategorized/C语言入门/">
+
+
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/0f81ff2f.js","daovoice")
+  daovoice('init', {
+      app_id: "4b2e24a5"
+    });
+  daovoice('update');
+  </script>
+
+
+  <title>C语言入门 | 张鸿钢的个人博客</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?022780f518d5c2f3c144f8b448d64f89";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+<script type="text/javascript" src="/lib/clipboard/clipboard.js"></script>
+<script type="text/javascript" src="/js/src/custom.js"></script>
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">张鸿钢的个人博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Zhang Honggang's Personal Website</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-首页">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-标签">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-分类">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-归档">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-关于">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://zhanghonggang.com/uncategorized/C语言入门/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Neo">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="张鸿钢的个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">C语言入门</h1>
+        
+
+        <div class="post-meta">
+        
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-22T10:20:32+08:00">
+                2019-07-22
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2019-08-12T14:49:50+08:00">
+                2019-08-12
+              </time>
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  4.8k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  17
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>C语言是古老而长青的编程语言，它具备了现代程序设计的基础要求，它的语法是很多其他编程语言的基础，在系统程序、嵌入式系统等领域依然是无可替代的编程语言，在各类编程语言排行榜上常年占据前两名的位置。 本课程是后续的操作系统、编译原理、体系结构等课程的基石。</p>
+</blockquote>
+<a id="more"></a>
+
+<h3 id="第一节：介绍：计算机、程序和C语言"><a href="#第一节：介绍：计算机、程序和C语言" class="headerlink" title="第一节：介绍：计算机、程序和C语言"></a>第一节：介绍：计算机、程序和C语言</h3><h4 id="计算机和编程语言"><a href="#计算机和编程语言" class="headerlink" title="计算机和编程语言"></a>计算机和编程语言</h4><h5 id="计算机是语言"><a href="#计算机是语言" class="headerlink" title="计算机是语言"></a>计算机是语言</h5><ul>
+<li>程序是⽤特殊的编程语⾔写出来表达如何解决问题的</li>
+<li>不是⽤编程语⾔来和计算机交谈，⽽是描述要求它如何做事情的过程或⽅法</li>
+</ul>
+<h5 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h5><ul>
+<li>我们要让计算机做计算,就需要像这样找出计算的步骤,然后⽤编程语⾔写出来</li>
+<li>计算机做的所有的事情都叫做计算</li>
+</ul>
+<h5 id="程序的执⾏"><a href="#程序的执⾏" class="headerlink" title="程序的执⾏"></a>程序的执⾏</h5><ul>
+<li>解释：借助⼀个程序，那个程序能试图理解你的程序，然后按照你的要求执⾏</li>
+<li>编译：借助⼀个程序，就像⼀个翻译，把你的程序翻译成计算机真正能懂的语⾔——机器语⾔——写的程序，然后，这个机器语⾔写的程序就能直接执⾏了</li>
+</ul>
+<h5 id="解释语言与编译语言"><a href="#解释语言与编译语言" class="headerlink" title="解释语言与编译语言"></a>解释语言与编译语言</h5><ul>
+<li>语言本无编译/解释之分</li>
+<li>常用的执行方式而已</li>
+<li>解释型语言有特殊的计算能力</li>
+<li>编译型语言有确定的运算性能</li>
+</ul>
+<h4 id="C语言"><a href="#C语言" class="headerlink" title="C语言"></a>C语言</h4><h5 id="C语言用在哪里"><a href="#C语言用在哪里" class="headerlink" title="C语言用在哪里"></a>C语言用在哪里</h5><ul>
+<li><p>操作系统</p>
+</li>
+<li><p>嵌入式系统</p>
+</li>
+<li><p>驱动程序</p>
+</li>
+<li><p>底层驱动</p>
+<p>• 图形引擎、图像处理、声⾳效果</p>
+</li>
+</ul>
+<h5 id="C是一种工业语言"><a href="#C是一种工业语言" class="headerlink" title="C是一种工业语言"></a>C是一种工业语言</h5><ul>
+<li><p>开发效率&gt;&gt;学习过程</p>
+</li>
+<li><p>开发效率&gt;&gt;开发乐趣</p>
+</li>
+<li><p>日常应用很少直接用C语言编写</p>
+</li>
+<li><p>学习C的过程主要是写练习代码</p>
+<p>• ⽽⾮真实软件</p>
+</li>
+</ul>
+<h5 id="编译—-gt-运⾏"><a href="#编译—-gt-运⾏" class="headerlink" title="编译—&gt;运⾏"></a>编译—&gt;运⾏</h5><p>• C需要被编译才能运⾏，所以你需要</p>
+<ul>
+<li>编辑器</li>
+<li>编译器</li>
+</ul>
+<p>• 或者，IDE（集成开发环境）</p>
+<h4 id="第一个程序"><a href="#第一个程序" class="headerlink" title="第一个程序"></a>第一个程序</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"Hello World!\n"</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="第二节：计算：变量和表达式"><a href="#第二节：计算：变量和表达式" class="headerlink" title="第二节：计算：变量和表达式"></a>第二节：计算：变量和表达式</h3><h4 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h4><h5 id="变量-1"><a href="#变量-1" class="headerlink" title="变量"></a>变量</h5><ul>
+<li>变量是一个保存数据的地方，当我们需要在程序里保存数据时，就需要一个变量来保存它</li>
+</ul>
+<h5 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h5><ul>
+<li>一般形式就是：&lt;类型名称&gt; &lt;变量名称&gt;;</li>
+</ul>
+<h5 id="名字："><a href="#名字：" class="headerlink" title="名字："></a>名字：</h5><ul>
+<li>变量需要一个名字，变量的名字是一种“标识符”，意思是它用来识别这个和那个的不同的名字。</li>
+<li>标识符有标识符的构造规则。基本的原则是：标识符只能由字母、数字和下划线组成，数字不可以出现在第一个位置上，C语言的关键字（有的地方叫他们保留字）不可以用作标识符。</li>
+</ul>
+<h5 id="C语言的保留字"><a href="#C语言的保留字" class="headerlink" title="C语言的保留字"></a>C语言的保留字</h5><p>auto,break,case,char,const,continue,default,do,double,else,enum,extern,</p>
+<p>float,for,goto,if,int,long,register,return,short,signed,sizeof,static,struct,switch,</p>
+<p>typedef,union,unsigned,void,volatile,while,inline,restrict.</p>
+<h5 id="赋值"><a href="#赋值" class="headerlink" title="赋值"></a>赋值</h5><ul>
+<li>和数学不同，a=b在数学中表示关系，即a和b的值一样；而在程序设计中，a=b表示要求计算机做一个动作:将b的值赋给a。关系是静态的，而动作是动态的。</li>
+</ul>
+<h5 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h5><ul>
+<li>当赋值发生在定义变量的时候，就是变量的初始化</li>
+</ul>
+<h5 id="变量初始化"><a href="#变量初始化" class="headerlink" title="变量初始化"></a>变量初始化</h5><ul>
+<li>&lt;类型名称&gt; &lt;变量名称&gt; = &lt;初始值&gt;;</li>
+<li>组合变量定义的时候，也可以在这个定义中单独给单个变量赋初值。</li>
+</ul>
+<h5 id="读整数"><a href="#读整数" class="headerlink" title="读整数"></a>读整数</h5><ul>
+<li>scanf(“%d”,&amp;price);</li>
+<li>要求scanf这个函数读入下一个整数，读到的结果赋值给变量price</li>
+<li>小心price前面的&amp;</li>
+</ul>
+<h5 id="表达式"><a href="#表达式" class="headerlink" title="表达式"></a>表达式</h5><ul>
+<li>“=”是赋值运算符，有运算符的式子就叫做表达式。</li>
+</ul>
+<h5 id="变量类型"><a href="#变量类型" class="headerlink" title="变量类型"></a>变量类型</h5><ul>
+<li>C是一种有类型的语言，所有的变量在使用之前必须定义或生命，所有的变量必须具有确定的数据类型。数据类型表示在变量中可以存放什么样的数据，变量中只能存放指定类型的数据，运行过程中不能改变变量的类型</li>
+</ul>
+<h5 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h5><ul>
+<li><p>固定不变的数是常数。直接写在程序里，我们称作直接量（literal) 。</p>
+</li>
+<li><p>更好的方式是定义一个常量：</p>
+<p>const int AMOUNT = 100;</p>
+</li>
+</ul>
+<h5 id="const"><a href="#const" class="headerlink" title="const"></a>const</h5><ul>
+<li>const是一个修饰符，加在int的前面，用来给这个变量加上一个const的属性。这个const的属性表示这个变量的值一旦初始化，就不能再修改了。</li>
+</ul>
+<h5 id="浮点数"><a href="#浮点数" class="headerlink" title="浮点数"></a>浮点数</h5><ul>
+<li>带小数点的述职。浮点这个词的本意就是值小数点是浮动的，是计算机内部表达非整数的一种方式。</li>
+</ul>
+<h5 id="double"><a href="#double" class="headerlink" title="double"></a>double</h5><ul>
+<li>inch是定义为int类型的变量，如果把int换成double，我们就可以把它改为double类型的浮点数变量了。</li>
+<li>double的意思是”双”,他本来是”双精度浮点数”的第一个单词，人们用来表示浮点数类型。除了double,还有float标示单精度浮点数。</li>
+</ul>
+<h4 id="表达式-1"><a href="#表达式-1" class="headerlink" title="表达式"></a>表达式</h4><h5 id="定义-1"><a href="#定义-1" class="headerlink" title="定义"></a>定义</h5><ul>
+<li>一个表达式是一系列运算符和算子的组合，用来计算一个值。<ul>
+<li>运算符（operator）是指进行运算的动作，比如”+”,”-“,”*”,”/“。</li>
+<li>算子（operand）是指参与运算的值，可以是常数，变量，还可以是一个方法的返回值</li>
+</ul>
+</li>
+</ul>
+<h5 id="四则预算"><a href="#四则预算" class="headerlink" title="四则预算"></a>四则预算</h5><table>
+<thead>
+<tr>
+<th align="center">四则运算</th>
+<th align="center">C符号</th>
+<th align="center">意义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">+</td>
+<td align="center">+</td>
+<td align="center">加</td>
+</tr>
+<tr>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">减</td>
+</tr>
+<tr>
+<td align="center">x</td>
+<td align="center">*</td>
+<td align="center">乘</td>
+</tr>
+<tr>
+<td align="center">÷</td>
+<td align="center">/</td>
+<td align="center">除</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">%</td>
+<td align="center">取余</td>
+</tr>
+<tr>
+<td align="center">()</td>
+<td align="center">()</td>
+<td align="center">括号</td>
+</tr>
+</tbody></table>
+<ul>
+<li>%表示取两个数相除以后的余数</li>
+</ul>
+<h5 id="运算符优先级"><a href="#运算符优先级" class="headerlink" title="运算符优先级"></a>运算符优先级</h5><table>
+<thead>
+<tr>
+<th align="center">优先级</th>
+<th align="center">运算符</th>
+<th align="center">运算</th>
+<th align="center">结合关系</th>
+<th align="center">举例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">1</td>
+<td align="center">+</td>
+<td align="center">单目不变</td>
+<td align="center">自右向左</td>
+<td align="center">a*+b</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td align="center">-</td>
+<td align="center">单目取负</td>
+<td align="center">自右向左</td>
+<td align="center">a*-b</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="center">*</td>
+<td align="center">乘</td>
+<td align="center">自左向右</td>
+<td align="center">a*b</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="center">/</td>
+<td align="center">除</td>
+<td align="center">自左向右</td>
+<td align="center">a/b</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="center">%</td>
+<td align="center">取余</td>
+<td align="center">自左向右</td>
+<td align="center">a%b</td>
+</tr>
+<tr>
+<td align="center">3</td>
+<td align="center">+</td>
+<td align="center">加</td>
+<td align="center">自左向右</td>
+<td align="center">a+b</td>
+</tr>
+<tr>
+<td align="center">3</td>
+<td align="center">-</td>
+<td align="center">减</td>
+<td align="center">自左向右</td>
+<td align="center">a-b</td>
+</tr>
+<tr>
+<td align="center">4</td>
+<td align="center">=</td>
+<td align="center">赋值</td>
+<td align="center">自右向左</td>
+<td align="center">a=b</td>
+</tr>
+</tbody></table>
+<h5 id="递增递减运算符"><a href="#递增递减运算符" class="headerlink" title="递增递减运算符"></a>递增递减运算符</h5><ul>
+<li>“++”和”- -“是两个很特殊的运算符，他们是单目运算符，这个算子还必须是变量，作用就是给变量+1或-1。</li>
+<li>++和- -可以放在变量的前⾯，叫做前缀形式，也可以放在变量的后⾯，叫做后缀形式。</li>
+<li>a++的值是a加1以前的值，⽽++a的值是加了1以后的值，⽆论哪个，a⾃⼰的值都加了1了。</li>
+</ul>
+<h5 id="前缀后缀"><a href="#前缀后缀" class="headerlink" title="前缀后缀"></a>前缀后缀</h5><table>
+<thead>
+<tr>
+<th align="center">表达式</th>
+<th align="center">运算</th>
+<th align="center">表达式的值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">count++</td>
+<td align="center">给count加1</td>
+<td align="center">count原来的值</td>
+</tr>
+<tr>
+<td align="center">++count</td>
+<td align="center">给count加1</td>
+<td align="center">count+1以后的值</td>
+</tr>
+<tr>
+<td align="center">count- -</td>
+<td align="center">给count减1</td>
+<td align="center">count原来的值</td>
+</tr>
+<tr>
+<td align="center">- -count</td>
+<td align="center">给count减1</td>
+<td align="center">count-1以后的值</td>
+</tr>
+</tbody></table>
+<h3 id="第三节：判断：分支结构"><a href="#第三节：判断：分支结构" class="headerlink" title="第三节：判断：分支结构"></a>第三节：判断：分支结构</h3><h4 id="判断"><a href="#判断" class="headerlink" title="判断"></a>判断</h4><h5 id="条件"><a href="#条件" class="headerlink" title="条件"></a>条件</h5><ul>
+<li><p>计算两个值之间的关系，叫做关系运算</p>
+<table>
+<thead>
+<tr>
+<th align="center">运算符</th>
+<th align="center">意义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">==</td>
+<td align="center">相等</td>
+</tr>
+<tr>
+<td align="center">!=</td>
+<td align="center">不相等</td>
+</tr>
+<tr>
+<td align="center">&gt;</td>
+<td align="center">大于</td>
+</tr>
+<tr>
+<td align="center">&gt;=</td>
+<td align="center">大于或等于</td>
+</tr>
+<tr>
+<td align="center">&lt;</td>
+<td align="center">小于</td>
+</tr>
+<tr>
+<td align="center">&lt;=</td>
+<td align="center">小于或等于</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<h5 id="优先级"><a href="#优先级" class="headerlink" title="优先级"></a>优先级</h5><ul>
+<li>所有的关系运算符的优先级比算术运算低，但是比赋值运算的高</li>
+<li>判断是否相等的==和!=的优先级比其他的低，而连续的关系运算时从左到右进行的</li>
+</ul>
+<h5 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h5><ul>
+<li>注释（comment)插入在程序代码中，用来向读者提供解释信息。他们对于程序的功能没有任何影响，但是往往能使得程序更容易被人类读者理解。</li>
+<li>延续数行的注释，要用多行注释的格式来写。多行注释由一对字符序列”/*”开始，而以”*/“结束。</li>
+</ul>
+<h5 id="if语句"><a href="#if语句" class="headerlink" title="if语句"></a>if语句</h5><ul>
+<li>if语句这一行结束的时候并没有表示语句结束的”;”，而后面的赋值语句写在if的下一行，并且缩进了，在这一行结束的时候有一个表示语句结束的”;”。这表明这条赋值语句是if语句的一部分，if语句拥有和控制这套赋值语句，决定它是否要被执行。</li>
+</ul>
+<h4 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h4><h5 id="嵌套的判断"><a href="#嵌套的判断" class="headerlink" title="嵌套的判断"></a>嵌套的判断</h5><ul>
+<li>当if的条件满足或者不满足的时候要执行的语句也可以是一条IF或if-else语句，这就是嵌套的if语句</li>
+</ul>
+<h5 id="else的匹配"><a href="#else的匹配" class="headerlink" title="else的匹配"></a>else的匹配</h5><ul>
+<li>else总是和最近的那个if匹配</li>
+</ul>
+<h5 id="switch-case"><a href="#switch-case" class="headerlink" title="switch-case"></a>switch-case</h5><ul>
+<li>控制表达式只能是整数型的结果</li>
+<li>常量可以使常数，也可以是常数计算的表达式</li>
+<li>根据表达式的结果，寻找匹配的case,并执行case后面的语句，一直到break为止</li>
+<li>如果所有的case都不匹配，那么就执行default后面的语句；如果没有default，那么就什么都不做</li>
+</ul>
+<h5 id="break"><a href="#break" class="headerlink" title="break"></a>break</h5><ul>
+<li>switch语句可以看作是一种基于计算的跳转，计算控制表达式的值后，程序会跳转到相匹配的case（分支标号）处。</li>
+<li>分支标号只是说明switch内部位置的路标，在执行完分支中的最后一条语句后，如果后面没有break，就会顺序执行到下面的case里去，直到遇到一个break,或者switch结束为止。</li>
+</ul>
+<h3 id="第四节：循环"><a href="#第四节：循环" class="headerlink" title="第四节：循环"></a>第四节：循环</h3><h4 id="循环"><a href="#循环" class="headerlink" title="循环"></a>循环</h4><h5 id="while循环"><a href="#while循环" class="headerlink" title="while循环"></a>while循环</h5><ul>
+<li>如果我们把while翻译作”当”，那么一个while循环的意思就是：当条件满足时，不断地重复循环体内的语句。</li>
+<li>循环执行之前判断是否继续循环，所以有可能循环一次也没有被执行。</li>
+<li>条件成立时循环继续的条件。</li>
+</ul>
+<h5 id="do-while循环"><a href="#do-while循环" class="headerlink" title="do-while循环"></a>do-while循环</h5><ul>
+<li>在进入循环的时候不做检查，而是在执行完一轮循环体的代码之后，再来检查循环的条件是否满足，如果满足则继续下一轮循环，不满足则结束循环</li>
+</ul>
+<h5 id="两种循环"><a href="#两种循环" class="headerlink" title="两种循环"></a>两种循环</h5><ul>
+<li>do-while循环和while循环很像，区别是在循环体执行结束的时候才来判断条件。也就是说，无论如何，循环都会执行至少一遍，然后再来判断条件。相同的是，条件满足时执行循环，条件不满足时结束循环。</li>
+</ul>
+<h5 id="for循环"><a href="#for循环" class="headerlink" title="for循环"></a>for循环</h5><ul>
+<li><p>for循环像一个计数循环；设定一个计数器，初始化它，然后再计数器到达某值之前，重复执行循环体，而每执行一轮循环，计数器值以一定步进行调整。</p>
+</li>
+<li><p>示例：</p>
+<p>for（初始动作;条件;每轮的动作）{</p>
+<p>}</p>
+<ul>
+<li><p>for中的每一个表达式都只可以省略的</p>
+<p>for(;条件;)==while(条件)</p>
+</li>
+</ul>
+</li>
+</ul>
+<h5 id="循环控制"><a href="#循环控制" class="headerlink" title="循环控制"></a>循环控制</h5><h5 id="break-vs-continue"><a href="#break-vs-continue" class="headerlink" title="break vs continue"></a>break vs continue</h5><ul>
+<li>break：跳出循环</li>
+<li>continue：跳过循环这一轮剩下的语句进入下一轮</li>
+</ul>
+<p><img src="https://i.loli.net/2019/07/22/5d35527f6230e99458.png" alt="![DN1SASM9$2D]I`(8IS~TQ4P.png"></p>
+<h3 id="第五节：数据类型和处理"><a href="#第五节：数据类型和处理" class="headerlink" title="第五节：数据类型和处理"></a>第五节：数据类型和处理</h3><h4 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h4><h5 id="C是有类型的语言"><a href="#C是有类型的语言" class="headerlink" title="C是有类型的语言"></a>C是有类型的语言</h5><ul>
+<li><p>C语言的变量必须在使用前定义并且确定类型</p>
+</li>
+<li><p>C以后的语言向两个方向发展：</p>
+<p>C++/Java更强调类型，对类型的检查更严格</p>
+<p>JavaScript、Python、PHP不看中类型，甚至不需要事先定义</p>
+</li>
+</ul>
+<h5 id="类型安全"><a href="#类型安全" class="headerlink" title="类型安全"></a>类型安全</h5><ul>
+<li>支持强类型的观点认为明确的类型有助于尽早发现程序中的简单错误</li>
+<li>反对强类型的观点认为过于强调类型迫使程序员面对底层、实现而非事务逻辑</li>
+<li>总的来说，早期语言敲掉类型，面对底层的语言强调类型</li>
+<li>C语言需要类型，但是对类型的安全检查并不足够</li>
+</ul>
+<h5 id="C语言的类型"><a href="#C语言的类型" class="headerlink" title="C语言的类型"></a>C语言的类型</h5><ul>
+<li>整数<ul>
+<li>char、short、int、long、<strong>long long</strong></li>
+</ul>
+</li>
+<li>浮点数<ul>
+<li>float、double、<strong>long double</strong></li>
+</ul>
+</li>
+<li>逻辑<ul>
+<li><strong>bool</strong></li>
+</ul>
+</li>
+<li>指针</li>
+<li>自定义类型</li>
+</ul>
+<h5 id="类型的不同"><a href="#类型的不同" class="headerlink" title="类型的不同"></a>类型的不同</h5><ul>
+<li>类型名称：int、long、double</li>
+<li>输入输出时的格式化：%d、%ld、%lf</li>
+<li>所表示的数的范围：char&lt;shortr&lt;int&lt;float&lt;double</li>
+<li>内存中所占据的大小：1个字节到16个字节</li>
+<li>内存中的表现形式：二进制数（补码）、编码</li>
+</ul>
+<h5 id="sizeof"><a href="#sizeof" class="headerlink" title="sizeof"></a>sizeof</h5><ul>
+<li>是一个运算符，给出某个类型或变量在内存中所占据的字节数</li>
+<li>是静态运算符，在编译时刻就就决定了</li>
+<li>不要在sizeof的括号里做运算，运算无用</li>
+</ul>
+<h5 id="整数"><a href="#整数" class="headerlink" title="整数"></a>整数</h5><ul>
+<li>char：1字节（8比特）：-128~127</li>
+<li>short：2字节：-32768~32767</li>
+<li>int：取决于编译器（CPU），通常的意义是”一个字”</li>
+<li>long：取决于编译器（CPU），通常的意义是”一个字”</li>
+<li>long long：8字节</li>
+</ul>
+<h5 id="unsigned"><a href="#unsigned" class="headerlink" title="unsigned"></a>unsigned</h5><ul>
+<li>在整数类型前加上unsigned使得它们成为无符号的整数</li>
+<li>内部的二进制表达没变，变的是如何看待它们</li>
+<li>如果一个字面量常数想要表达自己是unsigned,可以在后面加U或者u</li>
+<li>初衷并非拓展数能表达的范围，而是为了做纯二进制运算，主要是为了移位</li>
+</ul>
+<h5 id="浮点类型"><a href="#浮点类型" class="headerlink" title="浮点类型"></a>浮点类型</h5><table>
+<thead>
+<tr>
+<th align="center">类型</th>
+<th align="center">字长</th>
+<th align="center">范围</th>
+<th align="center">有效数字</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">float</td>
+<td align="center">32</td>
+<td align="center">±(1.20x10 0,±inf,nan</td>
+<td align="center">7</td>
+</tr>
+<tr>
+<td align="center">double</td>
+<td align="center">64</td>
+<td align="center">±(2.2x10 0,±inf,nan</td>
+<td align="center">15</td>
+</tr>
+</tbody></table>
+<h5 id="浮点输入输出"><a href="#浮点输入输出" class="headerlink" title="浮点输入输出"></a>浮点输入输出</h5><table>
+<thead>
+<tr>
+<th align="center">类型</th>
+<th align="center">scanf</th>
+<th align="center">printf</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">float</td>
+<td align="center">%f</td>
+<td align="center">%f,%e</td>
+</tr>
+<tr>
+<td align="center">double</td>
+<td align="center">%lf</td>
+<td align="center">%f,%e</td>
+</tr>
+</tbody></table>
+<h5 id="字符类型"><a href="#字符类型" class="headerlink" title="字符类型"></a>字符类型</h5><p>char是一种整数，也是一种特殊的类型:字符。这是因为:</p>
+<ul>
+<li>用单引号表示的字符字面量:‘a’,’1’</li>
+<li>‘’也是一个字符</li>
+<li>printf和scanf里用%c来输入输出字符</li>
+</ul>
+<h5 id="逃逸字符"><a href="#逃逸字符" class="headerlink" title="逃逸字符"></a>逃逸字符</h5><table>
+<thead>
+<tr>
+<th>字符</th>
+<th>意义</th>
+<th>字符</th>
+<th>意义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>\b</td>
+<td>回退一格</td>
+<td>&quot;</td>
+<td>双引号</td>
+</tr>
+<tr>
+<td>\t</td>
+<td>到下一个表格位</td>
+<td>&#39;</td>
+<td>单引号</td>
+</tr>
+<tr>
+<td>\n</td>
+<td>换行</td>
+<td>\</td>
+<td>反斜杠本身</td>
+</tr>
+<tr>
+<td>\r</td>
+<td>回车</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h5 id="bool"><a href="#bool" class="headerlink" title="bool"></a>bool</h5><ul>
+<li>#include&lt;stdbool.h&gt;</li>
+<li>之后就可以使用bool,和true、false</li>
+<li>bool实际上还是以int的手段实现的，所以可以当做int来计算</li>
+<li>也只能当做int来输入输出</li>
+</ul>
+<h5 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h5><p>自动类型转换</p>
+<ul>
+<li>当运算符的两边出现不一致的类型时，会自动转换成较大的类型</li>
+<li>对于printf，任何小于int的类型会被转换成int；float会转换成double</li>
+<li>但是scanf不会，想要输出short，需要%hd</li>
+</ul>
+<p>强制类型转换</p>
+<ul>
+<li>要把一个量强制转换成另一个类型（通常是较小的类型），需要: (类型)值</li>
+<li>注意安全性，小的变量不总能表达大的量</li>
+<li>只是从那个变量计算出一个新的类型的值，它并不改变那个变量，无论是值还是类型都不改变</li>
+<li>强制类型转换的优先级高于四则运算</li>
+</ul>
+<h3 id="第六节：函数"><a href="#第六节：函数" class="headerlink" title="第六节：函数"></a>第六节：函数</h3><h5 id="函数的定义"><a href="#函数的定义" class="headerlink" title="函数的定义"></a>函数的定义</h5><ul>
+<li>函数是一块代码，接收零个或多个参数，做一件事情，并返回零个或一个值</li>
+<li><img src="https://i.loli.net/2019/08/12/LluvtCeOzQ6wEKF.png" alt="函数定义.png"></li>
+</ul>
+<h5 id="调用函数"><a href="#调用函数" class="headerlink" title="调用函数"></a>调用函数</h5><ul>
+<li>函数名(参数值);</li>
+<li>()起到了表示函数调用的重要作用，即使没用参数也需要()</li>
+<li>如果有参数，则需要给出正确的数量和顺序</li>
+<li>这些值会按照顺序一次用来初始化函数中的参数</li>
+</ul>
+<h5 id="函数返回"><a href="#函数返回" class="headerlink" title="函数返回"></a>函数返回</h5><ul>
+<li>函数知道每一次是哪里调用它，会返回到正确的地方</li>
+<li>return停止函数的执行，并送回一个值</li>
+<li>return;/return 表达式;</li>
+<li>一个函数里可以出现多个return语句</li>
+</ul>
+<h5 id="没有返回值的函数"><a href="#没有返回值的函数" class="headerlink" title="没有返回值的函数"></a>没有返回值的函数</h5><ul>
+<li>void函数名(参数表)</li>
+<li>不能使用带值的return</li>
+<li>可以没有return</li>
+<li>调用的时候不能做返回值的赋值</li>
+<li>如果函数有返回值，则必须使用带值的return</li>
+</ul>
+<h5 id="函数先后关系"><a href="#函数先后关系" class="headerlink" title="函数先后关系"></a>函数先后关系</h5><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>像这样把sun()写在上面是因为:</li>
+<li>C的编译器自上而下顺序分析你的代码</li>
+<li>在看到sum(1,10)的时候，他需要知道sum()的样子</li>
+<li>也就是sum()要几个参数,每个参数的类型如何,返回什么类型</li>
+<li>这样它才能检查你对sum()的调用是否正确</li>
+<li>倘若不知道，也就是把要调用的函数放到下面了，旧标准会假设你所调用的函数所有的参数都是int，返回也是int</li>
+</ul>
+<h5 id="函数原型"><a href="#函数原型" class="headerlink" title="函数原型"></a>函数原型</h5><ul>
+<li>函数头，以分号“;”结尾，就构成了函数的原型</li>
+<li>函数原型的目的是告诉编译器这个函数长什么样（名称，参数（数量及类型），返回类型）</li>
+<li>旧标准习惯把函数原型写在调用他的函数里面，现一般写在调用它的函数前面</li>
+</ul>
+<h5 id="调用函数-1"><a href="#调用函数-1" class="headerlink" title="调用函数"></a>调用函数</h5><ul>
+<li>如果函数有参数，调用函数是必须传递给它数量、类型正确的值</li>
+<li>可以传递给函数的值是表达式的结果，包括：字面量、变量、函数的返回值、计算的结果</li>
+</ul>
+<h5 id="类型不匹配"><a href="#类型不匹配" class="headerlink" title="类型不匹配"></a>类型不匹配</h5><ul>
+<li>调用函数时给的值与参数的类型不匹配是C语言传统上最大的漏洞</li>
+<li>编译器总是悄悄替你把类型转换好，但是这很可能不是你所期望的</li>
+</ul>
+<h5 id="传值"><a href="#传值" class="headerlink" title="传值"></a>传值</h5><ul>
+<li><p>C语言在调用函数时，永远只能传值给函数</p>
+</li>
+<li><p>每个函数有自己的变量空间，参数特位于这个独立的空间中没和其他函数没有关系</p>
+</li>
+<li><p>过去，对于函数参数表中的参数，叫做“形式参数”，调用函数时给的值，叫做“实际参数“</p>
+<p><img src="https://i.loli.net/2019/08/12/LzeoBatnKxqUwjH.png" alt="传值.png"></p>
+</li>
+</ul>
+<h5 id="本地变量"><a href="#本地变量" class="headerlink" title="本地变量"></a>本地变量</h5><ul>
+<li>函数的每次运行，就产生了一个独立的变量空间，在这个空间中的变量，是函数的的这次运行所独有的，称作本地变量</li>
+<li>定义在函数内部的变量就是本地变量</li>
+<li>参数也是本地变量</li>
+</ul>
+<h5 id="变量的生存期和作用域"><a href="#变量的生存期和作用域" class="headerlink" title="变量的生存期和作用域"></a>变量的生存期和作用域</h5><ul>
+<li>生存期:什么时候这个变量开始出现了，到什么时候他消亡了</li>
+<li>作用域：在（代码的）什么范围内可以访问这个变量（这个变量可以起作用）</li>
+<li>对于本地变量，这两个问题的答案是统一的:大括号内——块</li>
+</ul>
+<h5 id="本地变量的规则"><a href="#本地变量的规则" class="headerlink" title="本地变量的规则"></a>本地变量的规则</h5><ul>
+<li>本地变量是定义在块内的<ul>
+<li>它可以使定义在函数的块内</li>
+<li>也可以定义在语句的块内</li>
+<li>甚至可以随便拉一对大括号来定义变量</li>
+</ul>
+</li>
+<li>程序运行进入这个块之前，其中的变量不存在，离开这个块，其中的变量就消失了</li>
+<li>块外面定义的变量在里面仍然有效</li>
+<li>快里面定义了和外面同名的变量则掩盖了外面的</li>
+<li>不能在一个块内定义同名的变量</li>
+<li>本地变量不会被默认初始化</li>
+<li>参数在进入函数的时候就被初始化了</li>
+</ul>
+<h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><h5 id="定义数组"><a href="#定义数组" class="headerlink" title="定义数组"></a>定义数组</h5><ul>
+<li>&lt;类型&gt;变量名称[元素数量];<ul>
+<li>int grades[100];</li>
+<li>double weight[20];</li>
+</ul>
+</li>
+<li>元素数量必须是整数</li>
+<li>C99之前:元素数量必须是编译时刻确定的字面量</li>
+<li>是一种容器（放东西的东西）特点是：<ul>
+<li>其中所有的元素具有相同的数据类型；</li>
+<li>一旦创建，不能改变大小</li>
+<li>*（数组中的元素在内存中是连续依次排列的）</li>
+</ul>
+</li>
+</ul>
+<h5 id="数组的大小"><a href="#数组的大小" class="headerlink" title="数组的大小"></a>数组的大小</h5><ul>
+<li>sizeof给出整个数组所占据的内容的大小，单位是字节：sizeof(a)/sizeof(a[0])</li>
+<li>sizeof(a[0])给出数组中单个元素的大小，于是相除就得到了数组的单元个数</li>
+<li>这样的代码，一旦修改数组中初始的数据，不需要修改遍历的代码</li>
+</ul>
+<h5 id="数组的赋值"><a href="#数组的赋值" class="headerlink" title="数组的赋值"></a>数组的赋值</h5><ul>
+<li>数组变量本身不能被赋值</li>
+<li>要把一个数组的所有元素交给另一个数组，必须采用遍历<ul>
+<li>通常都是使用for循环让循环变量i从0到&lt;数组的长度，这样循环体内最大的i正好是数组最大的有效下标</li>
+<li>数组作为函数参数时，往往必须再用另一个参数来传入数组的大小，且不能再[]中给出数组的大小，不能再可利用sizeof来计算数组的元素个数</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    Neo
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://zhanghonggang.com/uncategorized/C语言入门/" title="C语言入门">http://zhanghonggang.com/uncategorized/C语言入门/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/C语言/" rel="tag"><i class="fa fa-tag"></i> C语言</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+
+        
+
+        
+          
+          <div id="needsharebutton-postbottom">
+            <span class="btn">
+              <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </span>
+          </div>
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/hexo/hexo简单使用/" rel="next" title="Hexo简单使用">
+                <i class="fa fa-chevron-left"></i> Hexo简单使用
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/uncategorized/Vue2-0入门-全局API/" rel="prev" title="Vue2-0入门-全局API">
+                Vue2-0入门-全局API <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80NDA3Mi8yMDYwNw=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Neo">
+            
+              <p class="site-author-name" itemprop="name">Neo</p>
+              <p class="site-description motion-element" itemprop="description">All that is real is rational,and all that is rational is real</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">分类</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/zhanghonggang" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://user.qzone.qq.com/1447463697/main" target="_blank" title="QQ">
+                      
+                        <i class="fa fa-fw fa-qq"></i>QQ</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://music.163.com/#/user/home?id=129856933" target="_blank" title="网易云">
+                      
+                        <i class="fa fa-fw fa-music"></i>网易云</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://steamcommunity.com/profiles/76561198355593765/" target="_blank" title="steam">
+                      
+                        <i class="fa fa-fw fa-steam-square"></i>steam</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#第一节：介绍：计算机、程序和C语言"><span class="nav-number">1.</span> <span class="nav-text">第一节：介绍：计算机、程序和C语言</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#计算机和编程语言"><span class="nav-number">1.1.</span> <span class="nav-text">计算机和编程语言</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#计算机是语言"><span class="nav-number">1.1.1.</span> <span class="nav-text">计算机是语言</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#算法"><span class="nav-number">1.1.2.</span> <span class="nav-text">算法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#程序的执⾏"><span class="nav-number">1.1.3.</span> <span class="nav-text">程序的执⾏</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#解释语言与编译语言"><span class="nav-number">1.1.4.</span> <span class="nav-text">解释语言与编译语言</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#C语言"><span class="nav-number">1.2.</span> <span class="nav-text">C语言</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#C语言用在哪里"><span class="nav-number">1.2.1.</span> <span class="nav-text">C语言用在哪里</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#C是一种工业语言"><span class="nav-number">1.2.2.</span> <span class="nav-text">C是一种工业语言</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#编译—-gt-运⾏"><span class="nav-number">1.2.3.</span> <span class="nav-text">编译—&gt;运⾏</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第一个程序"><span class="nav-number">1.3.</span> <span class="nav-text">第一个程序</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第二节：计算：变量和表达式"><span class="nav-number">2.</span> <span class="nav-text">第二节：计算：变量和表达式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#变量"><span class="nav-number">2.1.</span> <span class="nav-text">变量</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#变量-1"><span class="nav-number">2.1.1.</span> <span class="nav-text">变量</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#定义"><span class="nav-number">2.1.2.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#名字："><span class="nav-number">2.1.3.</span> <span class="nav-text">名字：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#C语言的保留字"><span class="nav-number">2.1.4.</span> <span class="nav-text">C语言的保留字</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#赋值"><span class="nav-number">2.1.5.</span> <span class="nav-text">赋值</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#初始化"><span class="nav-number">2.1.6.</span> <span class="nav-text">初始化</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#变量初始化"><span class="nav-number">2.1.7.</span> <span class="nav-text">变量初始化</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#读整数"><span class="nav-number">2.1.8.</span> <span class="nav-text">读整数</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#表达式"><span class="nav-number">2.1.9.</span> <span class="nav-text">表达式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#变量类型"><span class="nav-number">2.1.10.</span> <span class="nav-text">变量类型</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#常量"><span class="nav-number">2.1.11.</span> <span class="nav-text">常量</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#const"><span class="nav-number">2.1.12.</span> <span class="nav-text">const</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#浮点数"><span class="nav-number">2.1.13.</span> <span class="nav-text">浮点数</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#double"><span class="nav-number">2.1.14.</span> <span class="nav-text">double</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#表达式-1"><span class="nav-number">2.2.</span> <span class="nav-text">表达式</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#定义-1"><span class="nav-number">2.2.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#四则预算"><span class="nav-number">2.2.2.</span> <span class="nav-text">四则预算</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#运算符优先级"><span class="nav-number">2.2.3.</span> <span class="nav-text">运算符优先级</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#递增递减运算符"><span class="nav-number">2.2.4.</span> <span class="nav-text">递增递减运算符</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#前缀后缀"><span class="nav-number">2.2.5.</span> <span class="nav-text">前缀后缀</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第三节：判断：分支结构"><span class="nav-number">3.</span> <span class="nav-text">第三节：判断：分支结构</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#判断"><span class="nav-number">3.1.</span> <span class="nav-text">判断</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#条件"><span class="nav-number">3.1.1.</span> <span class="nav-text">条件</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#优先级"><span class="nav-number">3.1.2.</span> <span class="nav-text">优先级</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#注释"><span class="nav-number">3.1.3.</span> <span class="nav-text">注释</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#if语句"><span class="nav-number">3.1.4.</span> <span class="nav-text">if语句</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#分支"><span class="nav-number">3.2.</span> <span class="nav-text">分支</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#嵌套的判断"><span class="nav-number">3.2.1.</span> <span class="nav-text">嵌套的判断</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#else的匹配"><span class="nav-number">3.2.2.</span> <span class="nav-text">else的匹配</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#switch-case"><span class="nav-number">3.2.3.</span> <span class="nav-text">switch-case</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#break"><span class="nav-number">3.2.4.</span> <span class="nav-text">break</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第四节：循环"><span class="nav-number">4.</span> <span class="nav-text">第四节：循环</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#循环"><span class="nav-number">4.1.</span> <span class="nav-text">循环</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#while循环"><span class="nav-number">4.1.1.</span> <span class="nav-text">while循环</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#do-while循环"><span class="nav-number">4.1.2.</span> <span class="nav-text">do-while循环</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#两种循环"><span class="nav-number">4.1.3.</span> <span class="nav-text">两种循环</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#for循环"><span class="nav-number">4.1.4.</span> <span class="nav-text">for循环</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#循环控制"><span class="nav-number">4.1.5.</span> <span class="nav-text">循环控制</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#break-vs-continue"><span class="nav-number">4.1.6.</span> <span class="nav-text">break vs continue</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第五节：数据类型和处理"><span class="nav-number">5.</span> <span class="nav-text">第五节：数据类型和处理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#数据类型"><span class="nav-number">5.1.</span> <span class="nav-text">数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#C是有类型的语言"><span class="nav-number">5.1.1.</span> <span class="nav-text">C是有类型的语言</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#类型安全"><span class="nav-number">5.1.2.</span> <span class="nav-text">类型安全</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#C语言的类型"><span class="nav-number">5.1.3.</span> <span class="nav-text">C语言的类型</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#类型的不同"><span class="nav-number">5.1.4.</span> <span class="nav-text">类型的不同</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#sizeof"><span class="nav-number">5.1.5.</span> <span class="nav-text">sizeof</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#整数"><span class="nav-number">5.1.6.</span> <span class="nav-text">整数</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#unsigned"><span class="nav-number">5.1.7.</span> <span class="nav-text">unsigned</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#浮点类型"><span class="nav-number">5.1.8.</span> <span class="nav-text">浮点类型</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#浮点输入输出"><span class="nav-number">5.1.9.</span> <span class="nav-text">浮点输入输出</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#字符类型"><span class="nav-number">5.1.10.</span> <span class="nav-text">字符类型</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#逃逸字符"><span class="nav-number">5.1.11.</span> <span class="nav-text">逃逸字符</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#bool"><span class="nav-number">5.1.12.</span> <span class="nav-text">bool</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#类型转换"><span class="nav-number">5.1.13.</span> <span class="nav-text">类型转换</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第六节：函数"><span class="nav-number">6.</span> <span class="nav-text">第六节：函数</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#函数的定义"><span class="nav-number">6.0.1.</span> <span class="nav-text">函数的定义</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#调用函数"><span class="nav-number">6.0.2.</span> <span class="nav-text">调用函数</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#函数返回"><span class="nav-number">6.0.3.</span> <span class="nav-text">函数返回</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#没有返回值的函数"><span class="nav-number">6.0.4.</span> <span class="nav-text">没有返回值的函数</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#函数先后关系"><span class="nav-number">6.0.5.</span> <span class="nav-text">函数先后关系</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#函数原型"><span class="nav-number">6.0.6.</span> <span class="nav-text">函数原型</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#调用函数-1"><span class="nav-number">6.0.7.</span> <span class="nav-text">调用函数</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#类型不匹配"><span class="nav-number">6.0.8.</span> <span class="nav-text">类型不匹配</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#传值"><span class="nav-number">6.0.9.</span> <span class="nav-text">传值</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#本地变量"><span class="nav-number">6.0.10.</span> <span class="nav-text">本地变量</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#变量的生存期和作用域"><span class="nav-number">6.0.11.</span> <span class="nav-text">变量的生存期和作用域</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#本地变量的规则"><span class="nav-number">6.0.12.</span> <span class="nav-text">本地变量的规则</span></a></li></ol></li></ol><li class="nav-item nav-level-3"><a class="nav-link" href="#数组"><span class="nav-number">7.</span> <span class="nav-text">数组</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#定义数组"><span class="nav-number">7.0.1.</span> <span class="nav-text">定义数组</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#数组的大小"><span class="nav-number">7.0.2.</span> <span class="nav-text">数组的大小</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#数组的赋值"><span class="nav-number">7.0.3.</span> <span class="nav-text">数组的赋值</span></a></li></ol></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Neo</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">14.3k</span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+      <div id="needsharebutton-float">
+        <span class="btn">
+          <i class="fa fa-share-alt" aria-hidden="true"></i>
+        </span>
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
+
+  
+  
+  <script src="/lib/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+      pbOptions = {};
+      
+          pbOptions.iconStyle = "box";
+      
+          pbOptions.boxForm = "horizontal";
+      
+          pbOptions.position = "bottomCenter";
+      
+          pbOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-postbottom', pbOptions);
+    
+    
+      flOptions = {};
+      
+          flOptions.iconStyle = "box";
+      
+          flOptions.boxForm = "horizontal";
+      
+          flOptions.position = "middleRight";
+      
+          flOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-float', flOptions);
+    
+  </script>
+
+  
+
+  
+
+  
+
+  
+
+  <!-- 代码块复制功能 -->
+<script type="text/javascript" src="/js/src/clipboard.min.js"></script>  
+<script type="text/javascript" src="/js/src/clipboard-use.js"></script>
+
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/tororo.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true}});</script></body>
+</html>
+
+
+  

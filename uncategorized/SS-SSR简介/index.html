@@ -1,0 +1,1530 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-matrix.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-matrix.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-matrix.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Wall.Maria,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="张鸿钢的个人博客" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="SS 的全称是 Shadowsocks，是一种加密的传输方式（一种基于 Socks5 代理方式的网络数据加密传输包）；SS 是目前主流的科学上网方式，是目前最稳定最好用的科学上网工具之一。SSR（全称 ShadowsocksR ）是 SS 的修改版，也算是增强版，是在SS 的基础上做了些功能的增加和修改。">
+<meta name="keywords" content="Wall.Maria">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SS&#x2F;SSR简介">
+<meta property="og:url" content="http://zhanghonggang.com/uncategorized/SS-SSR简介/index.html">
+<meta property="og:site_name" content="张鸿钢的个人博客">
+<meta property="og:description" content="SS 的全称是 Shadowsocks，是一种加密的传输方式（一种基于 Socks5 代理方式的网络数据加密传输包）；SS 是目前主流的科学上网方式，是目前最稳定最好用的科学上网工具之一。SSR（全称 ShadowsocksR ）是 SS 的修改版，也算是增强版，是在SS 的基础上做了些功能的增加和修改。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-05-24T00:43:33.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="SS&#x2F;SSR简介">
+<meta name="twitter:description" content="SS 的全称是 Shadowsocks，是一种加密的传输方式（一种基于 Socks5 代理方式的网络数据加密传输包）；SS 是目前主流的科学上网方式，是目前最稳定最好用的科学上网工具之一。SSR（全称 ShadowsocksR ）是 SS 的修改版，也算是增强版，是在SS 的基础上做了些功能的增加和修改。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":true},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://zhanghonggang.com/uncategorized/SS-SSR简介/">
+
+
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/0f81ff2f.js","daovoice")
+  daovoice('init', {
+      app_id: "4b2e24a5"
+    });
+  daovoice('update');
+  </script>
+
+
+  <title>SS/SSR简介 | 张鸿钢的个人博客</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?022780f518d5c2f3c144f8b448d64f89";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+<script type="text/javascript" src="/lib/clipboard/clipboard.js"></script>
+<script type="text/javascript" src="/js/src/custom.js"></script>
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">张鸿钢的个人博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Zhang Honggang's Personal Website</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-首页">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-标签">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-分类">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-归档">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-关于">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://zhanghonggang.com/uncategorized/SS-SSR简介/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Neo">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="张鸿钢的个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">SS/SSR简介</h1>
+        
+
+        <div class="post-meta">
+        
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-22T13:57:35+08:00">
+                2019-05-22
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2019-05-24T08:43:33+08:00">
+                2019-05-24
+              </time>
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2.1k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  8
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>SS 的全称是 Shadowsocks，是一种加密的传输方式（一种基于 Socks5 代理方式的网络数据加密传输包）；SS 是目前主流的科学上网方式，是目前最稳定最好用的科学上网工具之一。<br>SSR（全称 ShadowsocksR ）是 SS 的修改版，也算是增强版，是在SS 的基础上做了些功能的增加和修改。<a id="more"></a><br>有很多的 SS 客户端，但是仅仅有 SS 客户端还不能翻墙，还得需要在SS 客户端中添加正常可用的 SS 信息，SS 信息可以自己买 VPS 服务器搭建，也可以买别人搭建好的，也有人搭建了免费共享出来的。网上卖 SS 信息的非常多非常多（不过跑路的也很多，自己当心），但都不是官方提供，SS 官网并不卖服务。</p>
+<ul>
+<li><p>个人觉得不错的SS / SSR服务商（机场）：</p>
+<ul>
+<li>SS / SSR / V2Ray服务商（机场）推荐：<a href="https://congcong0806.github.io/2019/03/13/DlerCloud" target="_blank" rel="noopener">Dler Cloud</a></li>
+<li><a href="https://portal.rixcloud.me/aff.php?aff=397" target="_blank" rel="noopener">https://www.rixcloud.me</a>（专业性的NO.1）</li>
+<li><a href="https://my.yoyutrans.com/aff.php?aff=9" target="_blank" rel="noopener">https://www.yoyutrans.com</a>（服务器质量不错，速度也很好，有部分阿里内网专线和20个香港Azure，以及其他地区的，全部独享线路，线路大概在90条+）</li>
+<li><a href="https://xn--i2ru8q2qg.com/" target="_blank" rel="noopener">https：//喵帕斯.com</a>（机场届老牌性价比很高）</li>
+<li><a href="https://www.muncloud.net/aff.php?aff=365" target="_blank" rel="noopener">https://www.muncloud.net</a>（很不错的一家，性价比不错，60 +节点。）</li>
+<li><a href="https://agentneo.co/?rc=exwul5a6" target="_blank" rel="noopener">https://agentneo.co</a>（一家正在成长期的机场）</li>
+<li><a href="http://www.dropboxchina.com/ss.html" target="_blank" rel="noopener">http://www.dropboxchina.com/ss.html</a></li>
+<li><a href="http://g.panda-rock.com/user/?code=xtwOjRng99" target="_blank" rel="noopener">https://panda-cloud.me</a> (企业级的AnyConnect服务）</li>
+</ul>
+</li>
+<li><p>浅谈部分机场（SS / SSR提供商）的使用感受 - 毒药</p>
+<ul>
+<li><a href="https://github.com/387099/SSR/issues/1" target="_blank" rel="noopener">https://github.com/387099/SSR/issues/1</a></li>
+<li><a href="https://www.duyaoss.com/index.php/archives/3" target="_blank" rel="noopener">https://www.duyaoss.com/index.php/archives/3</a></li>
+<li><a href="http://www.evernote.com/l/AmEIfRIK0H9LE5XUla9dVz21Q8NQ5sVaxMM" target="_blank" rel="noopener">http://www.evernote.com/l/AmEIfRIK0H9LE5XUla9dVz21Q8NQ5sVaxMM</a></li>
+</ul>
+</li>
+<li><p>记录一下SS的前世今生，以及一个简单的教程总结</p>
+<ul>
+<li><a href="https://github.com/JadaGates/ShadowsocksBio" target="_blank" rel="noopener">https://github.com/JadaGates/ShadowsocksBio</a></li>
+</ul>
+</li>
+<li><p>免费SS账号分享（PS：能不能用，能用多久，我就不确定了）</p>
+<ul>
+<li><a href="https://free-ss.site/" target="_blank" rel="noopener">https://free-ss.site</a></li>
+<li><a href="https://tool.ssrshare.us/tool/free_ssr" target="_blank" rel="noopener">https://tool.ssrshare.us/tool/free_ssr</a></li>
+</ul>
+</li>
+<li><p>SSR免费节点订阅地址（PS：至于节点能不能用我就不知道了，别人分享的）</p>
+<ul>
+<li><a href="https://github.com/ImLaoD/sub/raw/master/ssrshare.com" target="_blank" rel="noopener">https://github.com/ImLaoD/sub/raw/master/ssrshare.com</a></li>
+<li><a href="https://github.com/ImLaoD/sub/raw/master/v2ray_ssrshare.com" target="_blank" rel="noopener">https://github.com/ImLaoD/sub/raw/master/v2ray_ssrshare.com</a></li>
+<li><a href="https://github.com/AmazingDM/sub/raw/master/ssrshare.com" target="_blank" rel="noopener">https://github.com/AmazingDM/sub/raw/master/ssrshare.com</a></li>
+<li><a href="https://sub.global.vtr.cool/v2sub/rvdwt?rocket=1" target="_blank" rel="noopener">https://sub.global.vtr.cool/v2sub/rvdwt?rocket=1</a></li>
+<li><a href="https://yzzz.ml/freessr" target="_blank" rel="noopener">https://yzzz.ml/freessr</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h2><p>VPN也是传输方式，VPN默认是全局的（也有少数是可以分流的），开启后所有App软件都会走代理，而且VPN的特征值太明显，目前已被G·F·W干扰<br>.SS是和VPN完全不同类型的东西，SS的客户端是智能代理智能分流，根据规则自动判断，只有被墙了的才会走代理（自己也可以设置代理域名和IP），不需要代理的走直连，这样就可以7x24的开启SS，国内和没被墙的走直连不走代理，国内国外两不误.SS比VPN好用太多了！ </p>
+<blockquote>
+<p>相比传统的VPN（IKE，IPSec，PPTP …），相关传统V2Ray这种科学上网的集合体，Shadowsocks在服务端更加轻量，单一协议完善程度更高;在移动端有更丰富的客户端选择，兼容性和灵活性更优。（此段摘自：<a href="https://medium.com/@unbiniliumm/95187ef07ced" target="_blank" rel="noopener">https： //medium.com/@unbiniliumm/95187ef07ced</a>）</p>
+</blockquote>
+<h2 id="耗电"><a href="#耗电" class="headerlink" title="耗电"></a>耗电</h2><p><em>为什么使用了代理应用后在电量统计中显示耗电很多？</em><br>这是移动操作系统的一个特殊机制，Surge，Quantumult，Shadowrocket等等所有的SS客户端开启后会接管全局的（几乎）所有通信，所以所有的网络方面电量消耗都会被算在SS客户端头上，实际使用中不会感到SS客户端对电量有明显影响，“设置 - 电池”中看到它的电池用量，绝大部分都是网络所消耗的电量，并不是SS客户端消耗的电量，SS客户端就是背锅侠。<br>网络流量也是如此的。</p>
+<h1 id="客户端"><a href="#客户端" class="headerlink" title="客户端"></a>客户端</h1><h2 id="推荐客户端"><a href="#推荐客户端" class="headerlink" title="推荐客户端"></a>推荐客户端</h2><ul>
+<li><code>iOS</code>：Surge 3，Quantumult，Shadowrocket</li>
+<li><code>Android</code>：ClashA，Surfboard</li>
+<li><code>macOS</code>：浪费Mac，ClashX</li>
+<li><code>Windows</code>：Clash for Windows</li>
+<li><code>Linux</code>：Clash<br><em>（下方有下载地址）</em></li>
+</ul>
+<h2 id="ios客户端（全区可下载）"><a href="#ios客户端（全区可下载）" class="headerlink" title="ios客户端（全区可下载）"></a>ios客户端（全区可下载）</h2><ul>
+<li><a href="https://testflight.apple.com/join/DAs8hpAh" target="_blank" rel="noopener">Pharos lite</a> TestFlight</li>
+<li><a href="https://itunes.apple.com/cn/app/id1260141606" target="_blank" rel="noopener">绕道费</a> ¥6.00</li>
+</ul>
+<h2 id="iOS客户端（仅国区下架，其他区可下载）"><a href="#iOS客户端（仅国区下架，其他区可下载）" class="headerlink" title="iOS客户端（仅国区下架，其他区可下载）"></a>iOS客户端（仅国区下架，其他区可下载）</h2><ul>
+<li><a href="https://itunes.apple.com/us/app/surge-3/id1442620678" target="_blank" rel="noopener">Surge 3</a>免费+内购¥328.00</li>
+<li><a href="https://itunes.apple.com/us/app/surge-enterprise/id1433867616" target="_blank" rel="noopener">浪涌企业</a>免费</li>
+<li><a href="https://itunes.apple.com/us/app/quantumult/id1252015438" target="_blank" rel="noopener">Quantumult</a> $ 4.99（也叫：圈）</li>
+<li><a href="https://itunes.apple.com/us/app/shadowrocket-for-shadowsocks/id932747118" target="_blank" rel="noopener">Shadowrocket</a> $ 2.99（也叫：小火箭）</li>
+<li><a href="https://itunes.apple.com/us/app/kitsunebi-proxy-utility/id1446584073" target="_blank" rel="noopener">Kitsunebi</a> $ 0.99</li>
+<li><a href="https://itunes.apple.com/us/app/pharos-pro/id1456610173" target="_blank" rel="noopener">Pharos Pro</a> $ 0.99</li>
+<li><a href="https://itunes.apple.com/us/app/pepi/id1283082051" target="_blank" rel="noopener">Pepi</a> 1.99美元</li>
+<li><a href="https://itunes.apple.com/us/app/id1162704202" target="_blank" rel="noopener">Potatso 2</a> $ 2.99</li>
+<li><a href="https://itunes.apple.com/us/app/surfing-advanced-proxy/id1051326718" target="_blank" rel="noopener">A.BIG.T</a>免费</li>
+<li><a href="https://itunes.apple.com/us/app/ranger-networktool/id1330474376" target="_blank" rel="noopener">Ranger NetworkTool</a> 1.99美元</li>
+<li><a href="https://itunes.apple.com/us/app/wingy-http-s-socks5-proxy-utility/id1178584911" target="_blank" rel="noopener">Wingy</a> $ 0.99</li>
+<li><a href="https://itunes.apple.com/us/app/firstwingy/id1316416848" target="_blank" rel="noopener">FirstWingy</a> $ 0.99</li>
+<li><a href="https://itunes.apple.com/us/app/loon/id1373567447" target="_blank" rel="noopener">Loon</a> 1.99美元</li>
+<li><a href="https://itunes.apple.com/us/app/shadowpocket/id1354988493" target="_blank" rel="noopener">ShadowPocket</a> $ 0.99</li>
+<li><a href="https://itunes.apple.com/us/app/anyflow-a-super-cool-network-tool/id1176894911" target="_blank" rel="noopener">AnyFlow</a> 4.99美元</li>
+<li><a href="https://itunes.apple.com/us/app/shadowfish/id1220680757" target="_blank" rel="noopener">影鱼</a> $ 0.99</li>
+<li><a href="https://itunes.apple.com/us/app/shadowtunnel/id869194885" target="_blank" rel="noopener">ShadowTunnel</a> 2.99美元</li>
+<li><a href="https://itunes.apple.com/us/app/id1197935918" target="_blank" rel="noopener">Speedflow</a> $ 0.99</li>
+<li><a href="https://itunes.apple.com/us/app/alice-network-proxy-utility/id1135320992" target="_blank" rel="noopener">爱丽丝</a> 1.99美元</li>
+<li><a href="https://itunes.apple.com/us/app/id1253899156" target="_blank" rel="noopener">飞跃</a> 1.99美元</li>
+<li><a href="https://itunes.apple.com/us/app/id1218852656" target="_blank" rel="noopener">影纤</a> $ 8.99</li>
+<li><a href="https://itunes.apple.com/us/app/icproxy/id1000467304" target="_blank" rel="noopener">iCProxy</a> $ 1.99</li>
+<li><a href="https://itunes.apple.com/cn/app/shadowproxy-ss-proxy/id1377752871" target="_blank" rel="noopener">ShadowProxy</a> $ 0.99</li>
+<li><a href="https://itunes.apple.com/us/app/shadowlink-shadowsocks-tool/id1439686518" target="_blank" rel="noopener">ShadowLink</a>免费版</li>
+<li><a href="https://itunes.apple.com/us/app/outline-app/id1356177741" target="_blank" rel="noopener">大纲</a>免费</li>
+<li><a href="https://itunes.apple.com/us/app/id1239860606" target="_blank" rel="noopener">Potatso Lite</a>免费版</li>
+<li><a href="https://itunes.apple.com/us/app/id1265578116" target="_blank" rel="noopener">XNode</a>免费</li>
+<li><a href="https://itunes.apple.com/us/app/mume-vpn/id1144787928" target="_blank" rel="noopener">Mume VPN</a> Free</li>
+<li><a href="https://itunes.apple.com/us/app/netshuttle-shadowsocksr-tool/id982708939" target="_blank" rel="noopener">NetShuttle</a>免费版</li>
+<li><a href="https://itunes.apple.com/us/app/id1245170216" target="_blank" rel="noopener">黄鹂</a>免费</li>
+<li><a href="https://itunes.apple.com/us/app/brook-brook-shadowsocks-vpn-proxy/id1216002642" target="_blank" rel="noopener">Brook</a> Free</li>
+<li><a href="https://itunes.apple.com/us/app/fugu-2/id1215255916" target="_blank" rel="noopener">Fugu2</a>免费</li>
+<li><a href="https://itunes.apple.com/us/app/bedrock/id1362340186" target="_blank" rel="noopener">基岩</a>免费</li>
+</ul>
+<h2 id="iOS客户端（全区下架）"><a href="#iOS客户端（全区下架）" class="headerlink" title="iOS客户端（全区下架）"></a>iOS客户端（全区下架）</h2><ul>
+<li><a href="https://itunes.apple.com/us/app/surge-web-developer-tool-proxy/id1040100637" target="_blank" rel="noopener">浪涌2</a> $ 49.99</li>
+<li><a href="https://itunes.apple.com/cn/app/cross-proxy-client/id1194595243" target="_blank" rel="noopener">交叉</a></li>
+<li><a href="https://itunes.apple.com/cn/app/postern/id1352320896" target="_blank" rel="noopener">便门</a></li>
+<li><a href="https://itunes.apple.com/us/app/wingy-shadow-vpn-for-http-socks5-ss/id1148026741" target="_blank" rel="noopener">Wingy</a></li>
+<li><a href="https://itunes.apple.com/cn/app/id1275446921" target="_blank" rel="noopener">Kitsunebi</a> ¥30.00</li>
+<li><a href="https://itunes.apple.com/cn/app/id1290093815" target="_blank" rel="noopener">SuperWingy</a> ¥3.00</li>
+<li><a href="https://itunes.apple.com/cn/app/shadowrocket-wingy/id1396912700" target="_blank" rel="noopener">ShadowRocket - Wingy</a> ¥12.00</li>
+<li><a href="https://itunes.apple.com/cn/app/goodshadow/id1333544714" target="_blank" rel="noopener">GoodShadow</a> ¥1.00</li>
+<li><a href="https://itunes.apple.com/cn/app/id1183616161" target="_blank" rel="noopener">ShadowBroken</a> ¥12.00</li>
+<li><a href="https://itunes.apple.com/cn/app/id1256315160" target="_blank" rel="noopener">寒梅 - Mume Red</a> ¥128.00</li>
+<li><a href="https://itunes.apple.com/cn/app/id1234881211" target="_blank" rel="noopener">香蕉网</a> ¥3.00</li>
+<li><a href="https://itunes.apple.com/cn/app/superrocket-ssr/id1441365594" target="_blank" rel="noopener">SuperRocket</a> ¥3.00</li>
+<li><a href="https://itunes.apple.com/cn/app/a-big-t-iv/id1342485820" target="_blank" rel="noopener">A.BIG.T IV</a> ¥68.00</li>
+<li><a href="https://itunes.apple.com/cn/app/wingy-speed-ssr/id1445350536" target="_blank" rel="noopener">Wingy - 速度SSR</a> ¥18.00</li>
+<li><a href="https://itunes.apple.com/cn/app/anylink-link-everywhere/id1339085910" target="_blank" rel="noopener">AnyLink</a> Free</li>
+<li><a href="https://itunes.apple.com/cn/app/skipworld/id1183653098" target="_blank" rel="noopener">SkipWorld</a>免费版</li>
+<li><a href="https://itunes.apple.com/cn/app/id1272045249" target="_blank" rel="noopener">SsrConnectPro</a>免费</li>
+<li><a href="https://itunes.apple.com/cn/app/id1176857712" target="_blank" rel="noopener">采取</a></li>
+<li><a href="https://itunes.apple.com/cn/app/id1187813723" target="_blank" rel="noopener">ShadowAgent</a></li>
+<li><a href="https://itunes.apple.com/cn/app/lifi-shadowsocks-and-shadowsocksr-vpn-client/id1153372559" target="_blank" rel="noopener">LIFI</a></li>
+<li><a href="https://itunes.apple.com/us/app/openwingy/id1294672758" target="_blank" rel="noopener">OpenWingy</a></li>
+<li><a href="https://itunes.apple.com/us/app/shadowing/id1194879940" target="_blank" rel="noopener">阴影</a></li>
+<li><a href="https://itunes.apple.com/us/app/id1115240504" target="_blank" rel="noopener">电路捷径</a></li>
+<li><a href="https://itunes.apple.com/us/app/waterdrop-shadowsocks-client-for-ios/id1212107997" target="_blank" rel="noopener">水滴</a></li>
+<li><a href="https://itunes.apple.com/us/app/ssrconnect-proxy-utility/id1161221960" target="_blank" rel="noopener">SsrConnect</a></li>
+<li><a href="https://itunes.apple.com/us/app/wormholex/id1252554589" target="_blank" rel="noopener">WormholeX</a></li>
+<li><a href="https://itunes.apple.com/us/app/chisel-shadowsocks-proxy/id1184798886" target="_blank" rel="noopener">凿</a></li>
+<li><a href="https://itunes.apple.com/us/app/id1180335805" target="_blank" rel="noopener">秒连VPN</a></li>
+<li>……</li>
+</ul>
+<h2 id="macOS客户端"><a href="#macOS客户端" class="headerlink" title="macOS客户端"></a>macOS客户端</h2><ul>
+<li><a href="http://nssurge.com/" target="_blank" rel="noopener">适用于Mac的</a>浪费$ 49.99 / $ 69.99 / $ 99.99</li>
+<li><a href="https://github.com/yichengchen/clashX/releases" target="_blank" rel="noopener">ClashX</a> Free</li>
+<li><a href="https://github.com/Dreamacro/clash/releases" target="_blank" rel="noopener">冲突</a>免费</li>
+<li><a href="https://github.com/qinyuhang/ShadowsocksX-NG-R/releases" target="_blank" rel="noopener">ShadowsocksX-NG-R8</a>免费</li>
+<li><a href="https://github.com/qingshuisiyuan/electron-ssr-backup/releases" target="_blank" rel="noopener">electron-ssr</a> Free</li>
+<li><a href="https://itunes.apple.com/cn/app/a-big-t/id1114040100" target="_blank" rel="noopener">A.BIG.T</a> ¥30.00</li>
+<li><a href="https://itunes.apple.com/cn/app/shadowtunnel-shadowsocks-shadowsocksr-client/id1187938179" target="_blank" rel="noopener">ShadowTunnel</a>免费</li>
+<li><a href="https://github.com/langyanduan/Reborn/releases" target="_blank" rel="noopener">重生</a>自由</li>
+<li><a href="https://raw.githubusercontent.com/Jigsaw-Code/outline-releases/master/manager/Outline-Manager.dmg" target="_blank" rel="noopener">大纲</a>免费</li>
+<li>免费<a href="https://github.com/sipt/shuttle/releases" target="_blank" rel="noopener">班车</a></li>
+<li><a href="https://itunes.apple.com/cn/app/shadowsocks-browser/id1207191724" target="_blank" rel="noopener">shadowsocks浏览器！</a>¥18.00</li>
+<li><a href="https://itunes.apple.com/cn/app/ssrconnectpro/id1376924741" target="_blank" rel="noopener">SsrConnectPro</a> ¥3.00</li>
+<li><a href="https://pan.lanzou.com/i0dskef" target="_blank" rel="noopener">GoAgentX</a>免费版</li>
+<li><a href="https://github.com/mithril-global/GoAgentX/releases" target="_blank" rel="noopener">非官方GoAgentX</a> Free</li>
+<li><a href="https://github.com/huacnlee/flora-kit/releases" target="_blank" rel="noopener">Flora</a> Free</li>
+<li><a href="https://itunes.apple.com/us/app/poster/id411445577" target="_blank" rel="noopener">后面的</a>下架</li>
+<li><a href="https://github.com/zhuhaow/SpechtLite/releases" target="_blank" rel="noopener">SpechtLite</a>免费</li>
+<li><a href="https://www.plutox.top/" target="_blank" rel="noopener">浅黄色</a></li>
+<li><a href="https://itunes.apple.com/cn/app/id1249677933" target="_blank" rel="noopener">夜莺</a> Free +内购</li>
+<li><a href="https://github.com/trailofbits/algo" target="_blank" rel="noopener">Algo</a> - 在云中设置个人IPSEC VPN。</li>
+<li><a href="https://github.com/zhuhaow/SpechtLite" target="_blank" rel="noopener">SpechtLite</a> - 支持Shadowsocks及规则管理的高效率代理。</li>
+<li><a href="http://shadowsocks.org/" target="_blank" rel="noopener">ShadowsocksX</a> - 一个快速的隧道代理，可以帮助你绕过防火墙。</li>
+<li><a href="https://github.com/qiuyuzhou/ShadowsocksX-NG" target="_blank" rel="noopener">ShadowsocksX-NG</a> - 一款ShadowsocksX客户端软件。</li>
+<li><a href="https://getlantern.org/" target="_blank" rel="noopener">Lantern</a> - 科学上网。</li>
+<li><a href="https://www.tunnelbear.com/" target="_blank" rel="noopener">Tunnelbear</a> - 简单的私人VPN。</li>
+<li><a href="https://tunnelblick.net/downloads.html" target="_blank" rel="noopener">Tunnelblick</a> - OpenVPN的免费软件。</li>
+<li><a href="https://github.com/OldFrank/GoAgentX" target="_blank" rel="noopener">GoAgentX</a> - 科学上网。</li>
+<li><a href="https://nssurge.com/" target="_blank" rel="noopener">Surge</a> - 科学上网。</li>
+<li><a href="https://www.locovpn.co/mannul/" target="_blank" rel="noopener">LoCoVPN</a> - 每天签到可获得2小时免费VPN加速。</li>
+<li><a href="http://www.2-vpn4.cc/home.action" target="_blank" rel="noopener">二师兄VPN</a> - 提供无限流量，无限续期免费VPN账号。</li>
+<li><a href="http://www.jsqgtx.cc/DownLoad" target="_blank" rel="noopener">GTX加速器</a> - 每天签到领取500M流量。</li>
+<li><a href="http://fengchinet2.com/" target="_blank" rel="noopener">风驰VPN</a> - 无限流量，无限续期的免费VPN加速服务。</li>
+<li><a href="https://www.tinc-vpn.org/" target="_blank" rel="noopener">tinc</a> - VPN软件。</li>
+<li><a href="https://www.shimovpn.com/" target="_blank" rel="noopener">Shimo</a> - 连接大量VPN的应用</li>
+<li><a href="https://www.v2ray.com/" target="_blank" rel="noopener">V2Ray</a> - 原生支持Socks，HTTP，Shadowsocks，VMess等协议。</li>
+<li><a href="https://www.freevpn.pw/mac-vpn" target="_blank" rel="noopener">FreeVPN Plus</a> - 永不过期Mac免费VPN。</li>
+<li><a href="https://github.com/yinghuocho/firefly-proxy" target="_blank" rel="noopener">Firefly萤火虫</a> - 免费科学上网。</li>
+<li><a href="https://github.com/yanue/V2rayU" target="_blank" rel="noopener">V2rayU</a> - 一款v2ray客户端软件。</li>
+<li><a href="https://github.com/yichengchen/clashX" target="_blank" rel="noopener">ClashX</a> - 基于clash的一款支持规则过滤的科学上网工具。</li>
+</ul>
+<h2 id="Windows客户端"><a href="#Windows客户端" class="headerlink" title="Windows客户端"></a>Windows客户端</h2><ul>
+<li><a href="https://github.com/Fndroid/clash_for_windows_pkg/releases" target="_blank" rel="noopener">用于Windows的冲突</a></li>
+<li><a href="https://github.com/Dreamacro/clash/releases" target="_blank" rel="noopener">冲突</a></li>
+<li><a href="https://github.com/shadowsocks/shadowsocks-windows/releases" target="_blank" rel="noopener">2.6.8</a></li>
+<li><a href="https://github.com/shadowsocks/shadowsocks-windows/releases/tag/2.3.1" target="_blank" rel="noopener">Shadowsocks 2.3.1</a>（XP系统可用）</li>
+<li><a href="https://github.com/shadowsocksr-backup/shadowsocksr-csharp/releases" target="_blank" rel="noopener">ShadowsocksR</a>（简称：SSR）</li>
+<li><a href="https://github.com/shadowsocksrr/shadowsocksr-csharp/releases" target="_blank" rel="noopener">ShadowsocksRR</a>（简称：SSRR）</li>
+<li><a href="https://github.com/SoDa-GitHub/SSRR-Windows/releases" target="_blank" rel="noopener">SSRR</a></li>
+<li><a href="https://github.com/SoDa-GitHub/SSD-Windows/releases" target="_blank" rel="noopener">ShadowsocksD</a>（简称：SSD）</li>
+<li><a href="https://github.com/qingshuisiyuan/electron-ssr-backup/releases" target="_blank" rel="noopener">电子-SSR</a></li>
+<li><a href="https://github.com/hacking001/x2tap/releases" target="_blank" rel="noopener">x2tap</a></li>
+<li><a href="https://github.com/sipt/shuttle/releases" target="_blank" rel="noopener">穿梭</a></li>
+<li><a href="https://raw.githubusercontent.com/Jigsaw-Code/outline-releases/master/manager/Outline-Manager.exe" target="_blank" rel="noopener">大纲</a></li>
+<li><a href="https://github.com/huacnlee/flora-kit/releases" target="_blank" rel="noopener">植物群</a></li>
+<li><a href="https://sourceforge.net/projects/sscap" target="_blank" rel="noopener">SSCAP</a></li>
+<li><a href="https://www.sockscap64.com/sstap" target="_blank" rel="noopener">SSTap</a></li>
+<li><a href="https://www.sockscap64.com/sockscap-64-free-download" target="_blank" rel="noopener">sockscap里</a></li>
+<li><a href="https://github.com/shadowsocks/simple-obfs/releases" target="_blank" rel="noopener">简单obfs</a></li>
+<li><a href="https://github.com/shadowsocks/kcptun/releases" target="_blank" rel="noopener">kcptun</a></li>
+</ul>
+<h2 id="Android客户端"><a href="#Android客户端" class="headerlink" title="Android客户端"></a>Android客户端</h2><ul>
+<li><a href="https://github.com/ccg2018/ClashA/releases" target="_blank" rel="noopener">ClashA</a></li>
+<li><a href="https://manual.getsurfboard.com/cn/introduction" target="_blank" rel="noopener">Surfboard</a>（冲浪板支持导入浪涌配置）</li>
+<li><a href="https://github.com/PharosVip/Pharos-Android-Test" target="_blank" rel="noopener">灯塔</a></li>
+<li><a href="https://github.com/eycorsican/kitsunebi-android/releases" target="_blank" rel="noopener">狐火</a></li>
+<li><a href="https://play.google.com/store/apps/details?id=fun.kitsunebi.kitsunebi4android" target="_blank" rel="noopener">Kitsunebi Google Play</a></li>
+<li><a href="https://github.com/shadowsocks/shadowsocks-android/releases" target="_blank" rel="noopener">Shadowsocks影梭</a></li>
+<li><a href="https://play.google.com/store/apps/details?id=com.github.shadowsocks" target="_blank" rel="noopener">Shadowsocks影梭谷歌播放</a></li>
+<li><a href="https://play.google.com/apps/testing/com.github.shadowsocks" target="_blank" rel="noopener">Shadowsocks影梭Google Play Beta版</a></li>
+<li><a href="https://github.com/shadowsocks/simple-obfs-android/releases" target="_blank" rel="noopener">Simple Obfuscation</a>（影梭的混淆插件）</li>
+<li><a href="https://play.google.com/store/apps/details?id=com.github.shadowsocks.plugin.obfs_local" target="_blank" rel="noopener">简单混淆Google Play</a>（影梭的混淆插件）</li>
+<li><a href="https://github.com/shadowsocksr-backup/shadowsocksr-android/releases" target="_blank" rel="noopener">ShadowsocksR</a>（简称：SSR）</li>
+<li><a href="https://github.com/shadowsocksrr/shadowsocksr-android/releases" target="_blank" rel="noopener">ShadowsocksRR</a>（简称：SSRR）</li>
+<li><a href="https://github.com/TheCGDF/SSD-Android/releases" target="_blank" rel="noopener">ShadowsocksD</a>（简称：SSD）</li>
+<li><a href="https://play.google.com/store/apps/details?id=org.outline.android.client" target="_blank" rel="noopener">大纲</a></li>
+<li><a href="https://play.google.com/store/apps/details?id=co.netpatch.firewall" target="_blank" rel="noopener">NetPatch</a></li>
+<li><a href="https://play.google.com/store/apps/details?id=com.tunnelworkshop.postern" target="_blank" rel="noopener">后面的</a>（后面的支持导入浪涌配置）</li>
+<li><a href="https://play.google.com/store/apps/details?id=com.github.dawndiy.bifrostv" target="_blank" rel="noopener">BifrostV</a></li>
+<li><a href="https://github.com/shadowsocks/kcptun-android/releases" target="_blank" rel="noopener">kcptun，机器人</a></li>
+</ul>
+<h2 id="Linux客户端"><a href="#Linux客户端" class="headerlink" title="Linux客户端"></a>Linux客户端</h2><ul>
+<li><a href="https://github.com/Dreamacro/clash/releases" target="_blank" rel="noopener">冲突</a></li>
+<li><a href="https://github.com/qingshuisiyuan/electron-ssr-backup/releases" target="_blank" rel="noopener">电子-SSR</a></li>
+<li><a href="https://github.com/shadowsocks/shadowsocks-qt5" target="_blank" rel="noopener">2.6.8-QT5</a></li>
+<li><a href="https://github.com/ssrbackup/shadowsocksr" target="_blank" rel="noopener">ShadowsocksR</a>（简称：SSR）</li>
+<li><a href="https://raw.githubusercontent.com/Jigsaw-Code/outline-releases/master/manager/Outline-Manager.AppImage" target="_blank" rel="noopener">大纲</a></li>
+<li><a href="https://github.com/avege/avege" target="_blank" rel="noopener">Avege</a></li>
+<li><a href="https://github.com/huacnlee/flora-kit" target="_blank" rel="noopener">植物群</a></li>
+<li><a href="https://github.com/sipt/shuttle" target="_blank" rel="noopener">穿梭</a></li>
+<li><a href="https://github.com/shadowsocks/kcptun/releases" target="_blank" rel="noopener">kcptun</a></li>
+</ul>
+<h2 id="梅林路由器"><a href="#梅林路由器" class="headerlink" title="梅林路由器"></a>梅林路由器</h2><ul>
+<li><a href="https://github.com/KOP-XIAO/Clash-Merlin/wiki" target="_blank" rel="noopener">冲突梅兰日兰</a></li>
+<li><a href="https://github.com/hq450/fancyss" target="_blank" rel="noopener">fancyss</a></li>
+</ul>
+<h2 id="OpenWRT客户端"><a href="#OpenWRT客户端" class="headerlink" title="OpenWRT客户端"></a>OpenWRT客户端</h2><ul>
+<li><p><a href="https://github.com/SukkaW/Koolshare-Clash" target="_blank" rel="noopener">KoolClash</a></p>
+</li>
+<li><p><a href="https://github.com/shadowsocks/openwrt-shadowsocks" target="_blank" rel="noopener">的OpenWRT-2.6.8</a></p>
+</li>
+<li><h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1></li>
+</ul>
+<p>iOS设备上使用SS客户端也会显示VPN图标：是因为使用了iOS系统的VPN网络扩展接口（以及NEPacketTunnelProvider和NWUDPSession组件），iOS 9才开放的此接口，这些新接口让我们可以制作出私密协议的VPN产品，苹果官方称之为企业VPN。正是因为iOS 9之后开放了这个接口和组件才能有今天iOS上的各式各样的SS客户端。<br>官方文档：<a href="https://developer.apple.com/documentation/networkextension" target="_blank" rel="noopener">https</a>：<a href="https://developer.apple.com/documentation/networkextension" target="_blank" rel="noopener">//developer.apple。 COM /文档/ networkextension</a> </p>
+<p>SS / SSR客户端，在连接SS / SSR服务器的同时也会在本机开启SOCKS5或HTTP连接，用于本机软件和同一局域网内的其它设备连接; SS / SSR信息部分必须和SS / SSR服务器信息一致。<br>本地开启的SOCKS5与SS / SSR信息无关的，本机的软件和同一局域网内的其他设备只需要连接此台机器就行了，IP和端口也必须和SS / SSR客户端上开启的信息一致。<br>本机的软件和同一局域网内的其他设备通过SOCKS5连接到此台机器的SS / SSR客户端，SS / SSR客户端再连接到SS / SSR服务器。</p>
+<p>最后引用一句话：</p>
+<blockquote>
+<p>翻墙让你知道更多，知道更多反而不会快乐；被真相支配的痛苦，被圈养获得的安逸，墙的意义，尽在于此。</p>
+</blockquote>
+<blockquote>
+<p>转载自：<a href="https://congcong0806.github.io/2018/04/20/SS" target="_blank" rel="noopener">https://congcong0806.github.io/2018/04/20/SS</a></p>
+</blockquote>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    Neo
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://zhanghonggang.com/uncategorized/SS-SSR简介/" title="SS/SSR简介">http://zhanghonggang.com/uncategorized/SS-SSR简介/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Wall-Maria/" rel="tag"><i class="fa fa-tag"></i> Wall.Maria</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+
+        
+
+        
+          
+          <div id="needsharebutton-postbottom">
+            <span class="btn">
+              <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </span>
+          </div>
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/hexo/Typora入门/" rel="next" title="Typora入门">
+                <i class="fa fa-chevron-left"></i> Typora入门
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/uncategorized/SSR使用教程/" rel="prev" title="SSR使用教程">
+                SSR使用教程 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80NDA3Mi8yMDYwNw=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Neo">
+            
+              <p class="site-author-name" itemprop="name">Neo</p>
+              <p class="site-description motion-element" itemprop="description">All that is real is rational,and all that is rational is real</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">分类</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/zhanghonggang" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://user.qzone.qq.com/1447463697/main" target="_blank" title="QQ">
+                      
+                        <i class="fa fa-fw fa-qq"></i>QQ</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://music.163.com/#/user/home?id=129856933" target="_blank" title="网易云">
+                      
+                        <i class="fa fa-fw fa-music"></i>网易云</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://steamcommunity.com/profiles/76561198355593765/" target="_blank" title="steam">
+                      
+                        <i class="fa fa-fw fa-steam-square"></i>steam</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#区别"><span class="nav-number">1.</span> <span class="nav-text">区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#耗电"><span class="nav-number">2.</span> <span class="nav-text">耗电</span></a></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#客户端"><span class="nav-number"></span> <span class="nav-text">客户端</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#推荐客户端"><span class="nav-number">1.</span> <span class="nav-text">推荐客户端</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ios客户端（全区可下载）"><span class="nav-number">2.</span> <span class="nav-text">ios客户端（全区可下载）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#iOS客户端（仅国区下架，其他区可下载）"><span class="nav-number">3.</span> <span class="nav-text">iOS客户端（仅国区下架，其他区可下载）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#iOS客户端（全区下架）"><span class="nav-number">4.</span> <span class="nav-text">iOS客户端（全区下架）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#macOS客户端"><span class="nav-number">5.</span> <span class="nav-text">macOS客户端</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Windows客户端"><span class="nav-number">6.</span> <span class="nav-text">Windows客户端</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Android客户端"><span class="nav-number">7.</span> <span class="nav-text">Android客户端</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux客户端"><span class="nav-number">8.</span> <span class="nav-text">Linux客户端</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#梅林路由器"><span class="nav-number">9.</span> <span class="nav-text">梅林路由器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#OpenWRT客户端"><span class="nav-number">10.</span> <span class="nav-text">OpenWRT客户端</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#其他"><span class="nav-number"></span> <span class="nav-text">其他</span></a></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Neo</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">14.3k</span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+      <div id="needsharebutton-float">
+        <span class="btn">
+          <i class="fa fa-share-alt" aria-hidden="true"></i>
+        </span>
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
+
+  
+  
+  <script src="/lib/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+      pbOptions = {};
+      
+          pbOptions.iconStyle = "box";
+      
+          pbOptions.boxForm = "horizontal";
+      
+          pbOptions.position = "bottomCenter";
+      
+          pbOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-postbottom', pbOptions);
+    
+    
+      flOptions = {};
+      
+          flOptions.iconStyle = "box";
+      
+          flOptions.boxForm = "horizontal";
+      
+          flOptions.position = "middleRight";
+      
+          flOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-float', flOptions);
+    
+  </script>
+
+  
+
+  
+
+  
+
+  
+
+  <!-- 代码块复制功能 -->
+<script type="text/javascript" src="/js/src/clipboard.min.js"></script>  
+<script type="text/javascript" src="/js/src/clipboard-use.js"></script>
+
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/tororo.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true}});</script></body>
+</html>
+
+
+  
