@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://zhanghonggang.com/"/>
-  <updated>2019-10-19T11:51:06.315Z</updated>
+  <updated>2019-10-20T04:51:36.157Z</updated>
   <id>http://zhanghonggang.com/</id>
   
   <author>
@@ -18,15 +18,23 @@
   
   <entry>
     <title>十年</title>
-    <link href="http://zhanghonggang.com/uncategorized/%E5%8D%81%E5%B9%B4/"/>
-    <id>http://zhanghonggang.com/uncategorized/十年/</id>
+    <link href="http://zhanghonggang.com/%E9%9A%8F%E7%AC%94/%E5%8D%81%E5%B9%B4/"/>
+    <id>http://zhanghonggang.com/随笔/十年/</id>
     <published>2019-10-19T11:51:06.000Z</published>
-    <updated>2019-10-19T11:51:06.315Z</updated>
+    <updated>2019-10-20T04:51:36.157Z</updated>
     
     <summary type="html">
     
+      &lt;blockquote&gt;
+&lt;p&gt;天下只有两种人。比如一串葡萄到手，一种人挑最好的先吃，另一种人把最好的留到最后吃。照例第一种人应该乐观，因为他每吃一颗都是吃剩的葡萄里最好的；第二种人应该悲观，因为他每吃一颗都是吃剩的葡萄里最坏的。不过事实却适得其反，缘故是第二种人还有希望，第一种人只有回忆 ——钱钟书。&lt;/p&gt;
+&lt;/blockquote&gt;
+    
     </summary>
     
+      <category term="随笔" scheme="http://zhanghonggang.com/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+      <category term="玲" scheme="http://zhanghonggang.com/tags/%E7%8E%B2/"/>
     
   </entry>
   
@@ -187,7 +195,7 @@
     <link href="http://zhanghonggang.com/hexo/Typora%E5%85%A5%E9%97%A8/"/>
     <id>http://zhanghonggang.com/hexo/Typora入门/</id>
     <published>2019-05-18T06:00:43.000Z</published>
-    <updated>2019-05-19T12:38:54.000Z</updated>
+    <updated>2019-10-19T14:07:15.508Z</updated>
     
     <summary type="html">
     
